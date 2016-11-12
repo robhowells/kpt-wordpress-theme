@@ -1,0 +1,47 @@
+/*========================================
+
+	Base Styles
+
+========================================*/
+
+	@import "base/grid";
+	@import "base/normalize";
+	@import "base/base"; 
+
+/*========================================
+
+	Global Styles
+
+========================================*/
+
+	@import "global/colors";
+	@import "global/mixins";
+	@import "global/typography";
+	@import "global/icons";
+	@import "global/zIndex";
+	@import "global/helpers"; 
+	@import "global/animation";
+
+/*========================================
+
+	Layout Styles
+
+========================================*/
+
+	@import "layout/layout";
+
+	/*========================================
+		Component Styles
+	========================================*/
+	
+	@import "layout/components/buttons";
+    @import "layout/components/formElements";  
+	@import "layout/components/headerNavigation";
+	@import "layout/components/footerSocialIcons";
+	@import "layout/components/hero"; 
+	@import "layout/components/blockQuote"; 
+	@import "layout/components/panelGrid"; 
+
+
+
+	

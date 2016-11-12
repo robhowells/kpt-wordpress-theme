@@ -1,0 +1,72 @@
+/*========================================
+
+    Panel Grid Styles
+    _____________
+
+
+========================================*/   
+
+.panel-grid-wrapper {
+	font-size: 0;
+	margin: 0 auto;
+	max-width: 800px;
+}
+
+.panel-grid-item {
+	vertical-align: top;
+	display: inline-block;
+	&.one-third {
+		width: 33.33%;
+		text-align: center;
+		@include breakpoint(large-mobile) {
+			width: 100%;
+			margin: 0 0 20px 0;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	&.one-quarter {
+		margin: 0 5px;
+		padding: 20px;
+		width: calc(25% - 10px);
+		@include breakpoint(large-mobile) {
+			width: 100%;
+			margin: 0 0 20px 0;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.panel-grid-img {
+	color: $accent;
+	@include font-size(90);
+	margin: 0 auto 30px auto;
+	@include breakpoint(large-mobile) {
+		margin: 0 auto 15px auto;
+	}
+
+}
+
+.profile-img {
+	margin: 0 auto;
+	max-width: 150px;
+	border-radius: 100%;
+	background: $secondary;
+	@include backgroundImage;
+	&:after { 
+		content: "";
+		display: block;
+		padding-bottom: 100%;
+	}
+	@include breakpoint(large-mobile) {
+		max-width: 120px;
+	}
+}
+
+.panel-grid-content {
+	line-height: 1.4;
+}
+

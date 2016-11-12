@@ -1,0 +1,264 @@
+/*========================================
+
+    Layout Styles
+    _____________
+
+    For Header, Main and Footer sections
+
+========================================*/   
+
+/*========================================
+
+	HTML & Body Styles
+
+========================================*/
+
+html, body {
+	height: 100%;
+}
+
+body {
+	min-width: 300px;
+	&.mobile-no-scroll {
+		@include breakpoint(phablet) {
+			width: 100%;
+    		position: fixed;
+		}
+	}
+}
+
+/*========================================
+
+	Header Section Styles
+
+========================================*/
+
+header {
+    top: 0;
+    width: 100%;
+	padding: 15px 0;
+    position: fixed;
+	z-index: z(header);
+	@include transitionFast;
+	&.mini-header {
+	    padding: 5px 0;
+	    background: rgba($primary, 0.9);
+	    @include breakpoint(tablet) {
+			padding: 5px 0;
+		}
+		@include breakpoint(phablet) {
+			padding: 30px 0;
+		}
+	}
+	@include breakpoint(tablet) {
+		transition: none;
+		padding: 5px 0;
+		background: rgba($primary, 0.9);
+	}
+	@include breakpoint(phablet) { 
+        padding: 30px 0;
+    }
+	@include breakpoint(large-mobile) {
+		padding: 25px 0;
+	}
+}
+
+.header-logo-link { 
+	margin: 5px 0;
+	@include headingFont;
+	color: $whiteDefault;
+	display: inline-block; 
+	text-decoration: none;
+	transition: 0.3s color, 0.3s background;
+	z-index: z(header) + 2;
+	header.nav-open & { 
+		@include breakpoint(phablet) { 
+			color: $accent;
+		}
+	}
+	@include breakpoint(phablet) {
+		margin: 0;
+		@include centerVertically; 
+	}
+}
+
+
+.header-logo-link-main { 
+	float: left;
+    line-height: 1;
+    margin-right: 10px;
+    position: relative;
+    padding-right: 10px;
+    @include font-size(35);
+    text-transform: lowercase;
+    &:after {
+    	content: '';
+    	right: 0;
+    	width: 2px;
+    	height: 80%;
+    	@include transition;
+    	background: $whiteDefault;
+    	@include centerVertically;
+    	header.nav-open & { 
+			@include breakpoint(phablet) { 
+				background: $accent;
+			}
+		}
+		.header-logo-link:hover & {
+			background: $accent;
+		}
+    }
+    @include breakpoint(phablet) { 
+		@include font-size(25);
+	}
+}
+
+.header-logo-link-sub {
+	float: left;
+    margin-top: 6px;
+}
+
+.header-logo-link-sub-item {
+	display: block;
+	line-height: 14px;
+	letter-spacing: 2px;
+	@include font-size(12);
+	text-transform: uppercase;
+	&:first-child {
+		@include breakpoint(phablet) { 
+			display: none;
+		}
+	}
+	&:last-child {
+		letter-spacing: 2.5px;
+	}
+	@include breakpoint(phablet) { 
+		line-height: 17px;
+		letter-spacing: 3px;
+		@include font-size(10);
+	}
+}
+
+/*========================================
+
+	Main Section Styles
+
+========================================*/
+
+section {
+	margin: 0 auto;
+	max-width: 2000px;
+}
+
+.section-padded-xs {
+	padding: 25px 0;
+	@include breakpoint(large-mobile) {
+		padding: 20px 0;
+	}
+}
+
+.section-padded-sm {
+	padding: 40px 0;
+	@include breakpoint(large-mobile) {
+		padding: 20px 0;
+	}
+}
+
+.section-padded {
+	padding: 50px 0;
+	@include breakpoint(large-mobile) {
+		padding: 25px 0;
+	}
+}
+
+.section-padded-xl {
+	position: relative;
+	padding: 120px 0;
+	@include breakpoint(small-desktop) {  
+		padding: 100px 0;
+	}
+	@include breakpoint(tablet) {
+		padding: 90px 0;
+	}
+	@include breakpoint(phablet) {
+		padding: 70px 0;
+	}
+	@include breakpoint(large-mobile) {
+		padding: 40px 0;
+	}
+	&:after {
+		content: '';
+		background: red;
+		position: absolute;
+	}
+}
+
+.section-padded-bottom-xs {
+	padding-bottom: 25px;
+	@include breakpoint(large-mobile) {
+		padding-bottom: 20px;
+	}
+}
+
+.section-with-bg {
+	padding: 120px 0;
+	position: relative;
+	@include backgroundImage;
+	background-color: $secondary;
+	background-attachment: fixed;
+	&:after {
+		content: '';
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		position: absolute;
+		background: rgba($primary, 0.7);
+	}
+	@include breakpoint(small-desktop) {  
+		padding: 100px 0;
+	}
+	@include breakpoint(tablet) {
+		padding: 90px 0;
+		background-attachment: initial;
+	}
+	@include breakpoint(phablet) {
+		padding: 70px 0;
+	}
+	@include breakpoint(large-mobile) {
+		padding: 40px 0;
+	}
+}
+
+.section-with-bg-content {
+	position: relative;
+	z-index: z(default) + 1;
+}
+
+.section-with-bg-title {
+	color: $whiteDefault;
+	margin: 0 auto 25px auto;
+}
+
+/*========================================
+
+	Content Block Styles
+
+========================================*/
+
+.content-block-intro {
+	margin-bottom: 25px; 
+	p {
+		@include font-size(20);
+	    @include breakpoint(small-desktop) {
+	        @include font-size(19);
+	    }
+	    @include breakpoint(tablet) {
+	        @include font-size(18);
+	    }
+	    @include breakpoint(large-mobile) {
+	        @include font-size(16);
+	    }
+	}
+}
+ 

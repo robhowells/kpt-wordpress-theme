@@ -1,0 +1,45 @@
+/*========================================
+
+    Block Qute Styles
+    _____________
+
+
+========================================*/   
+
+.styled-quote {
+	position: relative;
+	text-align: center;
+	@include headingFont;
+	@include font-size(30);
+	&:before {
+		content: open-quote;
+		top: -10px;
+		left: -20px;
+		position: relative;
+		@include breakpoint(tablet) {
+			top: -5px;
+			left: -5px;
+		}
+		@include breakpoint(large-mobile) { 
+            @include font-size(18);
+        }
+	}
+	&:after {
+		content: close-quote;
+		right: -10px;
+		position: relative;
+		@include breakpoint(tablet) {
+			right: -5px;
+		}
+		@include breakpoint(large-mobile) { 
+            @include font-size(18);
+        }
+	}
+	@include breakpoint(tablet) {
+		padding: 0 15px;
+		@include font-size(25);
+	}
+	@include breakpoint(large-mobile) {
+        @include font-size(21);
+    }
+}

@@ -1,0 +1,30 @@
+/*========================================
+
+    Footer Social Icons Styles
+    _____________
+
+
+========================================*/   
+
+.footer-social-icons {
+	display: inline-block;
+	@include breakpoint(large-mobile) {
+		margin-bottom: 10px;
+	}
+}
+
+.footer-social-icon {
+	color: $grey;
+	padding: 10px;
+	margin: 0 5px;
+	display: block;
+	@include transition;
+	border-radius: 100%;
+	text-decoration: none;
+	border: 2px solid $grey;
+	&:hover {
+		color: $whiteDefault;
+		border-color: $accent;
+		background-color: $accent;
+	}
+}

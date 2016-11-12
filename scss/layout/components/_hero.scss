@@ -1,0 +1,91 @@
+/*========================================
+
+    Hero Styles
+    _____________
+
+
+========================================*/   
+
+.hero {
+	padding: 140px 0 120px 0;
+	background-color: $secondary;
+	&.with-bg {
+		position: relative;
+		@include backgroundImage;
+		background-attachment: fixed;
+		&:after { 
+			content: '';
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			position: absolute;
+			background: rgba($primary, 0.7);
+		}
+		@include breakpoint(tablet) {
+			background-attachment: initial;
+		}
+	}
+	&.plain-primary { 
+		background: $primary;
+	}
+	&.mega-hero {
+		padding: 200px 0 160px 0;
+		@include breakpoint(xl-desktop-up) {
+			padding: 250px 0 280px 0;
+		}
+		@include breakpoint(tablet) {
+			padding: 170px 0 130px 0;
+		}
+		@include breakpoint(phablet) {
+			padding: 150px 0 120px 0;
+		}
+		@include breakpoint(large-mobile) {
+			padding: 120px 0 90px 0;
+		}
+	}
+	@include breakpoint(small-desktop) {
+		padding: 120px 0 90px 0;
+	}
+	@include breakpoint(tablet) {
+		padding: 120px 0 60px 0;
+	}
+	@include breakpoint(large-mobile) {
+		padding: 100px 0 50px 0;
+	}
+}
+
+.hero-content { 
+	padding: 0 30px;
+	position: relative;
+	z-index: z(default) + 1;
+}
+
+.hero-title {
+	max-width: 780px;
+	text-align: center;
+	color: $whiteDefault;
+	@include font-size(70);
+	margin: 0 auto 25px auto;
+	@include breakpoint(small-desktop) {
+		@include font-size(60);
+	}
+	@include breakpoint(tablet) {
+		@include font-size(50);
+	}
+	@include breakpoint(phablet) {
+        @include font-size(40);
+    }
+    @include breakpoint(large-mobile) {
+		margin-bottom: 15px;
+		@include font-size(32);
+	}
+}
+
+.hero-strapline {
+	width: 80%;
+	margin: 0 auto;
+	line-height: 1.4;
+	text-align: center;
+	color: $whiteDefault;
+}

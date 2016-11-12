@@ -1,0 +1,141 @@
+/*========================================
+
+    Button Styles
+    _____________
+
+
+========================================*/   
+
+@mixin accentColorWay {
+    background: $accent;
+    color: $whiteDefault;
+    border-color: $accent;
+}
+
+@mixin disabledColorWay {
+    color: $grey;
+    background: $secondary;
+    border-color: $secondary;
+}
+
+.btn, button, input[type='submit'] { 
+    appearance: none; 
+    overflow: hidden;
+    text-align: center;
+    padding: 10px 35px;
+    @include transition;
+    display: inline-block;
+    border-radius: 300px;
+    @include headingFont;
+    text-decoration: none;
+    @include font-size(12);
+    text-transform: uppercase;
+    &[disabled] {
+        @include disabledColorWay;
+        &:hover, &:focus {
+            @include disabledColorWay;
+        }
+    }
+    &:after {
+        content: '';
+        z-index: z(below);
+        position: absolute;
+        transition: all 0.3s;
+    }
+    @include breakpoint(large-mobile) { 
+        padding: 8px 30px; 
+        @include font-size(11);
+    }
+}
+
+.btn-xl {
+    padding: 15px 45px; 
+    @include breakpoint(large-mobile) { 
+        padding: 12px 35px; 
+    }
+}
+
+.btn-full-width {
+    width: 100%;
+}
+
+.btn-key-accent {
+	color: $accent;
+    background: none;
+	border: 2px solid $accent;
+    &:hover, &:focus {
+        @include accentColorWay;
+    }
+}
+
+.btn-key-light {
+    background: none;
+    color: $whiteDefault;
+    border: 2px solid $whiteDefault;
+    &:hover, &:focus {
+        @include accentColorWay;
+    }
+}
+
+.btn-key-dark {
+    background: none;
+    color: $primary;
+    border: 2px solid $primary;
+    &:hover, &:focus {
+        @include accentColorWay;
+    }
+}
+
+.btn-block-dark {
+	background: $primary;
+	border: 2px solid $primary; 
+	color: $secondaryVariation1;
+    &:hover, &:focus {
+        @include accentColorWay;
+    }
+}
+
+.btn-simple {
+    padding: 10px 0;
+    background: none;
+}
+
+.btn-chev-right {
+    background: none;
+    position: relative;
+    padding-right: 20px;
+    &:after {
+        content: '\e907'; 
+        right: 0px;
+        @include iconFont; 
+        transition: 0.2s right;
+        @include font-size(15);
+        @include centerVertically;
+    }
+    &:hover, &:focus {
+        &:after {
+            right: -2px;
+        }
+    }
+}
+
+.btn-error {
+    position: relative;
+    color: transparent;
+    @include accentColorWay;
+    &:after {
+        content: 'Whoops!';
+        left: 0;
+        right: 0;
+        z-index: z(default);
+        @include accentColorWay;
+        @include animation('scaleUp 0.5s');
+    }
+}
+
+.btn-strip-cta {
+    display: block;
+    padding: 25px 0;
+    @include font-size(15);
+}
+
